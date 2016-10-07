@@ -78,12 +78,14 @@
         StoreService.insert(vm.name, vm.password, vm.info, vm.key, function (err) {
           if (!err) {
             $location.url('/key-store')
+            $rootScope.$apply();
           }
         })
       } else {
         StoreService.update(vm.keyId, vm.name, vm.password, vm.info, vm.key, function (err) {
           if (!err) {
             $location.url('/key-store')
+            $rootScope.$apply();
           }
         })
       }
@@ -91,6 +93,7 @@
 
     vm.cancel = function () {
       $location.url('/key-store')
+      $rootScope.$apply();
     }
 
 
