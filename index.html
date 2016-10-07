@@ -6,8 +6,9 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
   <link rel="stylesheet" href="./node_modules/angular-material/angular-material.css">
   <script>
-    const ipc = require('electron').ipcRenderer
-    window.ipc = ipc;
+    const {clipboard, ipcRenderer}   = require('electron');
+    window.ipc = ipcRenderer;
+    window.clipboard = clipboard;
   </script>
 </head>
 <body ng-app="MyApp" ng-controller="MainController as MainCtrl">

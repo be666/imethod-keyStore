@@ -1,4 +1,4 @@
-(function () {
+(function (clipboard) {
   'use strict';
 
   angular
@@ -30,6 +30,14 @@
 
     };
 
+    $rootScope.clipboard = function (text) {
+      if (!text) {
+        return
+      }
+      clipboard.writeText(text);
+      $rootScope.showError(null,'复制成功！','提示')
+    };
+
     $rootScope.$on('$routeChangeStart', function (evt, next, current) {
       if (next.$$route && next.$$route.requiresAuth) {
         if (!AuthService.isAuthenticated()) {
@@ -39,4 +47,4 @@
       }
     });
   }
-})();
+})(clipboard);

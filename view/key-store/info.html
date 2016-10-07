@@ -7,7 +7,7 @@
 
     <md-input-container class="md-block">
       <label>请输入密码</label>
-      <input required ng-model="kInfo.password" name="passwordField">
+      <input required ng-model="kInfo.password" name="passwordField" ng-click="kInfo.clipboard(kInfo.password)">
     </md-input-container>
 
     <md-input-container class="md-block">

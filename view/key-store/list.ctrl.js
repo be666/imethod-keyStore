@@ -71,5 +71,9 @@
       });
 
     }
+
+    vm.clipboard=function (text) {
+      $rootScope.clipboard(text)
+    }
   }
 })();

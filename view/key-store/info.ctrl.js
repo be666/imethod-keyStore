@@ -17,7 +17,7 @@
     .controller('KeyStoreInfoController', KeyStoreInfoController);
 
   /** @ngInject */
-  function KeyStoreInfoController($timeout, $location, $routeParams, $scope, StoreService) {
+  function KeyStoreInfoController($rootScope, $location, $routeParams, $scope, StoreService) {
     var vm = this;
 
     vm.keyLengths = [6, 8, 12, 16];
@@ -91,6 +91,11 @@
 
     vm.cancel = function () {
       $location.url('/key-store')
+    }
+
+
+    vm.clipboard=function (text) {
+      $rootScope.clipboard(text)
     }
   }
 

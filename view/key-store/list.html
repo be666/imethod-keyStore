@@ -19,7 +19,7 @@
           <p>{{item.info}}</p>
         </div>
         <md-input-container>
-          <input ng-model="item.pwd" readonly>
+          <input ng-model="item.pwd" readonly  ng-click="kList.clipboard(item.pwd)">
         </md-input-container>
         <md-button class="md-secondary" ng-click="kList.show(item,$event)">显示</md-button>
         <md-button class="md-secondary" ng-click="kList.edit(item,$event)">修改</md-button>
