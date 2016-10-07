@@ -45,12 +45,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bqxu/imethod-keyStore.git"
+    "url": "git+https://github.com/imethod/imethod-keyStore.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bqxu/imethod-keyStore/issues"
+    "url": "https://github.com/imethod/imethod-keyStore/issues"
   },
-  "homepage": "https://github.com/bqxu/imethod-keyStore#readme"
+  "homepage": "https://github.com/imethod/imethod-keyStore#readme"
 }
