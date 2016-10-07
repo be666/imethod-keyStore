@@ -1,0 +1,22 @@
+<div>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>
+        <span>iMethod's login</span>
+      </h2>
+    </div>
+  </md-toolbar>
+  <md-content layout-padding layout="column">
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>请输入用户名</label>
+      <input ng-model="login.username">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>请输入密码</label>
+      <input ng-model="login.password">
+    </md-input-container>
+
+    <md-button class="md-raised" layout-align="center end" ng-click="login.login()">登录</md-button>
+  </md-content>
+</div>

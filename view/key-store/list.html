@@ -1,0 +1,29 @@
+<div>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+      </md-button>
+      <h2>
+        <span>iMethod's key store</span>
+      </h2>
+      <span flex></span>
+      <md-button class="md-raised md-primary" ng-click="kList.addKeyStore()">新增</md-button>
+    </div>
+  </md-toolbar>
+  <md-content>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="item in kList.itemList">
+        <div class="md-list-item-text">
+          <h3>{{item.name}}</h3>
+          <p>{{item.info}}</p>
+        </div>
+        <md-input-container>
+          <input ng-model="item.pwd" readonly>
+        </md-input-container>
+        <md-button class="md-secondary" ng-click="kList.show(item,$event)">显示</md-button>
+        <md-button class="md-secondary" ng-click="kList.edit(item,$event)">修改</md-button>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div>

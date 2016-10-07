@@ -1,0 +1,50 @@
+<md-content layout-padding layout-fill>
+  <form name="infoForm" ng-submit="kInfo.submit()" layout="column">
+    <md-input-container class="md-block">
+      <label>请输入名称</label>
+      <input required ng-model="kInfo.name" name="nameField">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>请输入密码</label>
+      <input required ng-model="kInfo.password" name="passwordField">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>备注</label>
+      <input ng-model="kInfo.info" name="passwordField">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>密钥</label>
+      <input ng-model="kInfo.key" name="passwordField">
+    </md-input-container>
+
+    <fieldset class="demo-fieldset" layout="column" layout-padding>
+      <legend class="demo-legend">密码生成器</legend>
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>密码位数</label>
+        <md-select ng-model="kInfo.keyLength">
+          <md-option ng-repeat="kLength in kInfo.keyLengths" value="{{kLength}}">
+            {{kLength}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+      <div layout="row" layout-wrap flex>
+        <div flex="50" ng-repeat="kType in kInfo.keyTypes">
+          <md-checkbox ng-checked="kInfo.exists(kType, kInfo.keyTypeSel)"
+                       ng-click="kInfo.toggle(kType, kInfo.keyTypeSel)">
+            {{ kType }}
+          </md-checkbox>
+        </div>
+      </div>
+
+      <div layout-wrap layout="row">
+        <md-button class="md-raised" layout-fill ng-click="kInfo.genKey()">生成</md-button>
+      </div>
+
+    </fieldset>
+    <md-button layout-align="center end" class="md-raised" type="submit">提交</md-button>
+    <md-button layout-align="center end" class="md-raised" type="cancel" ng-click="kInfo.cancel()">返回</md-button>
+  </form>
+</md-content>
